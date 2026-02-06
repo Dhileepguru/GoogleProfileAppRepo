@@ -18,6 +18,8 @@ namespace GoogleProfileApp.Controllers
             this.dbContext = dbContext;
         }
 
+
+
         public IActionResult Login()
         {
             var properties = new AuthenticationProperties { RedirectUri = Url.Action("GoogleResponse") };
