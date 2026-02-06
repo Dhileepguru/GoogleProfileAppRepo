@@ -1,0 +1,16 @@
+﻿@model GoogleProfileApp.Models.ApplicationUser
+
+<div class="container mt-5">
+    <h2>User Information</h2>
+   
+    <ul class="list-group mb-4" style="max-width: 400px;">
+        <li class="list-group-item"><strong>First Name:</strong> @Model.FirstName</li>
+        <li class="list-group-item"><strong>Last Name:</strong> @Model.LastName</li>
+        <li class="list-group-item"><strong>Google ID:</strong> @Model.GoogleId</li>
+    </ul>
+
+    <div class="actions">
+        <a asp-controller="User" asp-action="Profile" class="btn btn-warning">Edit Profile</a>
+        <a asp-controller="Account" asp-action="Login" class="btn btn-outline-danger">Sign Out</a>
+    </div>
+</div>

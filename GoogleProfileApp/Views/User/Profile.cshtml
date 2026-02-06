@@ -1,0 +1,23 @@
+﻿@model GoogleProfileApp.Models.ApplicationUser
+
+<h3>Update Your Profile</h3>
+
+<form asp-action="UpdateProfile" asp-controller="User" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="GoogleId" />
+
+    <ul style="list-style-type: none; padding: 0;">
+        <li class="mb-3">
+            <label>First Name:</label><br />
+            <input asp-for="FirstName" class="form-control" />
+        </li>
+        <li class="mb-3">
+            <label>Last Name:</label><br />
+            <input asp-for="LastName" class="form-control" />
+        </li>
+        <li>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+            <a asp-controller="Home" asp-action="Welcome" class="btn btn-secondary">Cancel</a>
+        </li>
+    </ul>
+</form>
