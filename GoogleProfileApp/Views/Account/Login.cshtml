@@ -1,17 +1,25 @@
-﻿<ul class="navbar-nav">
+﻿<ul class="navbar-nav ms-auto">
+   
     @if (User.Identity.IsAuthenticated)
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Home" asp-action="Welcome">Welcome</a>
+            <a class="nav-link text-dark fw-bold" asp-controller="Home" asp-action="Welcome">
+                <i class="bi bi-house-door"></i> Welcome
+            </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Sign Out</a>
+        <li class="nav-item ms-lg-2">
+            
+            <form class="form-inline" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit" class="btn btn-outline-danger btn-sm nav-link px-3">Sign Out</button>
+            </form>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login with Google</a>
+            <a class="btn btn-primary btn-sm px-4" asp-controller="Account" asp-action="Login">
+                <i class="bi bi-google"></i> Login with Google
+            </a>
         </li>
     }
 </ul>
