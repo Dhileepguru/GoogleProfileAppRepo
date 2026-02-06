@@ -28,14 +28,14 @@ namespace GoogleProfileApp.Controllers
         }
 
         
-        [Authorize] // 
+        [Authorize] 
         [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
         public async Task<IActionResult> Welcome()
         {
             // Get the GoogleId from the logged-in user's claims
             var googleId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            // Fetch user details directly from DB (Requirement 5)
+            
             var user = await dbContext.ApplicationUsers.FirstOrDefaultAsync(u => u.GoogleId == googleId);
 
             if (user == null)
